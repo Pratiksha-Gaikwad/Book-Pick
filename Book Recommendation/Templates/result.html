@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Pick</title>
+</head>
+<body>
+<h1>Book Pick</h1>
+{% if books %}
+<h2>Recommended books for {{ book_input }}:</h2>
+<ul>
+    {% for book in books %}
+    <li>
+        <h2>{{ book['title'] }}</h2>
+        <p>Rating: {{ book['ratings'] }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>{{ book_input }} is available</p>
+{% endif %}
+</body>
+</html>
